@@ -8,7 +8,7 @@ int main() {
     int current = 0;
     int sum = 0;
 
-    std::cout << "Введите правую границу диапазонп (n):";
+    std::cout << "Введите правую границу диапазона (n):";
     std::cin >> n;
 
     while (current <= n) {
