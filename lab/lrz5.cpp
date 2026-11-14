@@ -6,11 +6,14 @@ int main() {
 
     std::setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    int decimal_number = 0;
+    long long decimal_number = 0; 
     std::cout << "Введите 10 число:";
-    std::cin >> decimal_number;
+    if(!(std::cin >> decimal_number)){
+        std::cerr << "Надо ввести число!" << std::endl;
+        return 1;
+    }
 
-    std::cout << "Двоичная:" << std::bitset<16>(decimal_number) << std::endl;
+    std::cout << "Двоичная:" << std::bitset<32>(decimal_number) << std::endl;
     std::cout << "Восьмиричная:" << std::oct << decimal_number << std::endl;
 
     std::cout << "Шестнадцатиричная:" << std::hex << std::uppercase << decimal_number << std::endl;
