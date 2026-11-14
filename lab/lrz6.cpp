@@ -15,13 +15,13 @@ int main() {
     int punctuation = 0;
 
     for (char c : text) {
-       if (std::isalpha(static_cast<unsigned char>(c))) {
+        if (std::isalpha(c)) {
             letters++;
-        } else if (std::isdigit(static_cast<unsigned char>(c))) {
+        } else if (std::isdigit(c)) {
             digits++;
-        } else if (std::isspace(static_cast<unsigned char>(c))) {
+        } else if (std::isspace(c)) {
             spaces++;
-        } else if (std::ispunct(static_cast<unsigned char>(c))) {
+        } else if (std::ispunct(c)) {
             punctuation++;
         }
     }
