@@ -9,10 +9,20 @@ int main() {
     int sum = 0;
 
     std::cout << "Введите правую границу диапазона (n):";
-    std::cin >> n;
+    if(!(std::cin >> n)) {
+        std::cerr << "Ошибка: граница должна быть числом большим 0!" << std::endl;
+
+        return 1;
+    }
+
+    if(n<0){
+        std::cerr << "Ошибка: граница должна быть числом большим 0!" << std::endl;
+
+        return 1;
+    }
 
     while (current <= n) {
-        if (current % 5 == 0) {
+        if (abs(current) % 5 == 0) {
             sum = sum +current;
         }
 
