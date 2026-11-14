@@ -12,13 +12,31 @@ int main() {
     std::getline(std::cin, text);
 
     std::cout << "Введите порядковый номер (k):";
-    std::cin >> k;
+    if(!(std::cin >> k)){
+        std::cerr << "Ошибка: k должно быть числом большим 0!" << std::endl;
+
+        return 1;
+    }
+    if (k<0){
+        std::cerr << "Ошибка: k должно быть числом большим 0!" << std::endl;
+
+        return 1;
+    }
 
     std::cout << "буква под номером " << k << " — это: " << text[k - 1] << std::endl;
 
 
     std::cout << "Введите второй порядковый номер (m): ";
-    std::cin >> m;
+    if(!(std::cin >> m)){
+        std::cerr << "Ошибка: m должно быть числом большим 0!" << std::endl;
+
+        return 1;
+    }
+    if (m<k){
+        std::cerr << "m должно быть Ю k" << std::endl;
+
+        return 1;
+    }
 
     std::cout << "Текст в диапазоне от " << k << " до " << m << ": ";
     
